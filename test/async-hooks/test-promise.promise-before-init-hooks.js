@@ -5,6 +5,8 @@ const assert = require('assert');
 const initHooks = require('./init-hooks');
 const { checkInvocations } = require('./hook-checks');
 
+common.crashOnUnhandledRejection();
+
 const p = new Promise(common.mustCall(function executor(resolve, reject) {
   resolve(5);
 }));
